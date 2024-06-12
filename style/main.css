@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding-top: 60px;
+}
+
+nav {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+#hero {
+  padding: 2rem;
+  background: #f4f4f4;
+  text-align: center;
+}
+#hero h1 {
+  font-size: 2.5rem;
+}
+#hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+#projects {
+  padding: 2rem;
+  background: #e2e2e2;
+  text-align: center;
+}
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#projects p {
+  font-size: 1.1rem;
+}
+
+#about {
+  padding: 2rem;
+  background: #d4d4d4;
+  text-align: center;
+}
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#about p {
+  font-size: 1.1rem;
+}
+
+#contact {
+  padding: 2rem;
+  background: #ccc;
+  text-align: center;
+}
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contact form label {
+  margin-top: 1rem;
+}
+#contact form input, #contact form textarea {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+#contact form button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#contact form button:hover {
+  background: #555;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/*# sourceMappingURL=main.css.map */

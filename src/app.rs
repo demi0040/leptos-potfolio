@@ -1,3 +1,5 @@
+use crate::components::{about::About, hero::Hero, projects::Projects};
+use crate::components::{contact::Contact, footer::Footer, nav::Nav};
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
@@ -12,31 +14,59 @@ pub fn App() -> impl IntoView {
         // id=leptos means cargo-leptos will hot-reload this stylesheet
         <Stylesheet id="leptos" href="/pkg/leptos-potfolio.css"/>
 
+        <Stylesheet id="splide-css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"/>
+       
         // sets the document title
-        <Title text="Welcome to Leptos"/>
+        <Title text="Welcome to My Portfolio"/>
+
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+        <Script>
+        {"
+            window.addEventListener('load', () => {
+                document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                new Splide('.splide', {
+                    type   : 'loop',
+                    drag   : 'free',
+                    perPage: 2,
+                }).mount();
+            });
+        "}
+        </Script>
 
         // content for this welcome page
+        <div id="app">
         <Router>
+            <Nav/>
             <main>
                 <Routes>
                     <Route path="" view=HomePage/>
                     <Route path="/*any" view=NotFound/>
                 </Routes>
             </main>
+            <Footer/>
         </Router>
+        </div>
     }
 }
 
 /// Renders the home page of your application.
 #[component]
 fn HomePage() -> impl IntoView {
-    // Creates a reactive value to update the button
-    let (count, set_count) = create_signal(0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    // // Creates a reactive value to update the button
+    // let (count, set_count) = create_signal(0);
+    // let on_click = move |_| set_count.update(|count| *count += 1);
 
     view! {
-        <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
+        // <h1>"Welcome to Leptos!"</h1>
+        // <button on:click=on_click>"Click Me: " {count}</button>
+        <Hero/>
+        <Projects/>
+        <About/>
+        <Contact/>
     }
 }
 
