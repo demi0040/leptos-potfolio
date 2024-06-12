@@ -1,0 +1,14 @@
+{
+  "name": "leptos-potfolio",
+  "version": "0.1.0",
+  "files": [
+    "leptos_potfolio_bg.wasm",
+    "leptos_potfolio.js",
+    "leptos_potfolio.d.ts"
+  ],
+  "module": "leptos_potfolio.js",
+  "types": "leptos_potfolio.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
